@@ -1,0 +1,16 @@
+{
+  // Unified Launcher additions layered between Omarchy's defaults and the
+  // user's ~/.config/omarchy/extensions/omarchy-menu.jsonc overrides.
+
+  // Keep Learn last and turn Keybindings into the native, searchable view.
+  "learn": {"icon":"󰧑","label":"Learn","position":1000},
+  "learn.keybindings": {"icon":"","label":"Keybindings"},
+
+  // Runtime-only clipboard history. Contents stay in ~/.local/state.
+  "clipboard": {"icon":"󰅌","label":"Clipboard History","provider":"clipboard","position":1,"aliases":["clipboard","clipboard-manager"]},
+
+  // Native views backed by Omarchy's emoji and reminder services.
+  "trigger.emoji": {"icon":"","label":"Emoji","provider":"emoji","aliases":["emoji","emojis"]},
+  "trigger.reminder.set": {"icon":"󰢌","label":"Set one","provider":"reminder-set","aliases":["reminder-set","remind"]},
+  "trigger.reminder.show": {"icon":"󰍉","label":"Manage","provider":"reminders","aliases":["reminders"]},
+}

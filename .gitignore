@@ -1,0 +1,8 @@
+*.bak.*
+*.log
+.cache/
+.idea/
+.vscode/
+clipboard-history.json
+clipboard-images/
+omarchy-reminder-*
