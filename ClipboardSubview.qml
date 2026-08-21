@@ -323,6 +323,7 @@ Item {
               width: visible ? parent.height : 0
               height: parent.height
               text: row.entryType === "file" ? "󰈔" : "󰅌"
+              textFormat: Text.PlainText
               color: row.hasCursor ? root.selectedText : root.foreground
               opacity: 0.72
               font.family: root.fontFamily
@@ -335,6 +336,7 @@ Item {
               width: parent.width - parent.height - parent.spacing
               height: parent.height
               text: row.previewText
+              textFormat: Text.PlainText
               color: row.hasCursor ? root.selectedText : root.foreground
               opacity: row.entryType === "text" ? 1 : 0.72
               font.family: root.fontFamily
@@ -384,6 +386,7 @@ Item {
         anchors.fill: parent
         anchors.leftMargin: root.contentMargin
         text: previewPane.activeRow ? previewPane.activeRow.fullText : ""
+        textFormat: Text.PlainText
         color: root.foreground
         font.family: root.fontFamily
         font.pixelSize: Style.font.title
@@ -413,6 +416,7 @@ Item {
     Text {
       width: parent.width
       text: "󰅌"
+      textFormat: Text.PlainText
       color: root.selectedText
       opacity: 0.8
       font.family: root.fontFamily
@@ -423,6 +427,7 @@ Item {
     Text {
       width: parent.width
       text: root.history.length === 0 ? "Clipboard is empty" : "No matches for “" + root.filterText + "”"
+      textFormat: Text.PlainText
       color: root.foreground
       opacity: 0.7
       font.family: root.fontFamily
@@ -431,7 +436,7 @@ Item {
     }
   }
 
-  ConfirmDialog {
+  SafeConfirmDialog {
     id: clearConfirm
     anchors.fill: parent
     opened: root.clearConfirmOpen

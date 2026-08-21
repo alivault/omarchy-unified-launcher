@@ -275,6 +275,7 @@ Item {
         Text {
           width: parent.width
           text: row.label
+          textFormat: Text.PlainText
           color: row.hasCursor ? root.selectedText : root.foreground
           font.family: root.fontFamily
           font.pixelSize: Style.font.heading
@@ -284,6 +285,7 @@ Item {
         Text {
           width: parent.width
           text: row.detail
+          textFormat: Text.PlainText
           color: row.hasCursor ? root.selectedText : root.foreground
           opacity: 0.62
           font.family: root.fontFamily
@@ -312,6 +314,7 @@ Item {
     Text {
       width: parent.width
       text: "󰢌"
+      textFormat: Text.PlainText
       color: root.selectedText
       opacity: 0.8
       font.family: root.fontFamily
@@ -322,6 +325,7 @@ Item {
     Text {
       width: parent.width
       text: root.reminders.length === 0 ? "No active reminders" : "No matches for “" + root.filterText + "”"
+      textFormat: Text.PlainText
       color: root.foreground
       opacity: 0.7
       font.family: root.fontFamily
@@ -330,7 +334,7 @@ Item {
     }
   }
 
-  ConfirmDialog {
+  SafeConfirmDialog {
     id: confirmDialog
     anchors.fill: parent
     opened: root.confirmOpen

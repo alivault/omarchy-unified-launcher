@@ -168,6 +168,7 @@ Item {
       Text {
         anchors.centerIn: parent
         text: cell.modelData.e
+        textFormat: Text.PlainText
         color: cell.hasCursor ? root.selectedText : root.foreground
         font.family: root.fontFamily
         font.pixelSize: Style.font.display
@@ -199,6 +200,7 @@ Item {
     Text {
       width: parent.width
       text: "󰞅"
+      textFormat: Text.PlainText
       color: root.selectedText
       opacity: 0.8
       font.family: root.fontFamily
@@ -209,6 +211,7 @@ Item {
     Text {
       width: parent.width
       text: root.emojis.length === 0 ? "Loading emojis…" : "No matches for “" + root.filterText + "”"
+      textFormat: Text.PlainText
       color: root.foreground
       opacity: 0.7
       font.family: root.fontFamily

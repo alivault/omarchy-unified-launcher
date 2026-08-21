@@ -1427,7 +1427,7 @@ Item {
           }
         }
 
-        ConfirmDialog {
+        SafeConfirmDialog {
           id: deleteConfirm
 
           anchors.fill: parent
@@ -1473,9 +1473,10 @@ Item {
               ? reminderView.promptText
               : (root.dmenuActive
               ? (root.dmenuPrompt + "…")
-              : (root.activeMenu === "root"
+                : (root.activeMenu === "root"
               ? "Type to search..."
-              : ((root.item(root.activeMenu) ? (root.item(root.activeMenu).title || root.item(root.activeMenu).label) : "Go") + "…"))))))
+                  : ((root.item(root.activeMenu) ? (root.item(root.activeMenu).title || root.item(root.activeMenu).label) : "Go") + "…"))))))
+            textFormat: Text.PlainText
             color: root.foreground
             opacity: root.filterText ? 1 : 0.58
             font.family: root.fontFamily
@@ -1614,6 +1615,7 @@ Item {
                 id: iconText
                 visible: row.hasIcon && !row.isApp
                 text: row.icon
+                textFormat: Text.PlainText
                 color: row.hasCursor ? root.selectedText : root.foreground
                 font.family: row.iconFont.length > 0 ? row.iconFont : root.fontFamily
                 font.pixelSize: Style.font.iconLarge
@@ -1655,6 +1657,7 @@ Item {
                   id: labelText
                   width: parent.width
                   text: row.label
+                  textFormat: Text.PlainText
                   color: row.hasCursor ? root.selectedText : root.foreground
                   font.family: root.fontFamily
                   font.pixelSize: Style.font.heading
@@ -1665,6 +1668,7 @@ Item {
                 Text {
                   width: parent.width
                   text: row.detail
+                  textFormat: Text.PlainText
                   visible: (root.filterText || row.kind === "dmenu") && row.detail.length > 0
                   color: root.foreground
                   opacity: 0.52
@@ -1687,6 +1691,7 @@ Item {
                   visible: row.shortcut.length > 0
                   width: visible ? Math.min(implicitWidth, Style.space(280)) : 0
                   text: row.shortcut
+                  textFormat: Text.PlainText
                   color: row.hasCursor ? root.selectedText : root.foreground
                   opacity: row.hasCursor ? 0.82 : 0.58
                   font.family: root.fontFamily
@@ -1700,6 +1705,7 @@ Item {
                 Text {
                   id: arrowText
                   text: row.kind === "menu" || row.kind === "link" ? "›" : ""
+                  textFormat: Text.PlainText
                   color: row.hasCursor ? root.selectedText : root.foreground
                   opacity: row.kind === "menu" || row.kind === "link" ? 0.36 : 0
                   font.family: root.fontFamily
@@ -1773,6 +1779,7 @@ Item {
 
             Text {
               text: "󰈉"
+              textFormat: Text.PlainText
               color: root.selectedText
               opacity: 0.8
               font.family: root.fontFamily
@@ -1783,6 +1790,7 @@ Item {
 
             Text {
               text: root.filterText ? "No matches for “" + root.filterText + "”" : "Nothing here yet"
+              textFormat: Text.PlainText
               color: root.foreground
               opacity: 0.7
               font.family: root.fontFamily

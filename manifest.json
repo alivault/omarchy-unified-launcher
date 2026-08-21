@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "id": "io.github.alivault.omarchy-unified-launcher",
   "name": "Unified Launcher",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": "alivault",
   "license": "MIT",
   "description": "Fast unified launcher for commands, apps, keybindings, clipboard, emoji, and reminders",

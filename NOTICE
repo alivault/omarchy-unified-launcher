@@ -3,7 +3,8 @@ https://github.com/basecamp/omarchy
 
 Upstream portions are Copyright (c) David Heinemeier Hansson and distributed
 under the MIT License included in this repository. In particular, this project
-is based on Omarchy's first-party menu plugin and includes local copies of its
-ClipboardHistory.js and EmojiSearch.js helper modules for portable QML imports.
+is based on Omarchy's first-party menu plugin, adapts its confirmation dialog,
+and includes local copies of its ClipboardHistory.js and EmojiSearch.js helper
+modules for portable QML imports.
 
 Unified Launcher modifications are Copyright (c) 2026 alivault.
